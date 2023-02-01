@@ -13,6 +13,7 @@ import Escrow from "./abis/Escrow.json"
 // Config
 import config from "./config.json"
 import Card from "./components/Card"
+import { Helmet } from "react-helmet"
 
 function App() {
     const [account, setAccount] = useState(null)
@@ -76,6 +77,9 @@ function App() {
     }, [])
     return (
         <div>
+            <Helmet>
+                <title>721 Acres</title>
+            </Helmet>
             <Navigation account={account} setAccount={setAccount} />
             <Search />
             <div className="p-8">
