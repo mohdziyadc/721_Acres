@@ -1,13 +1,106 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+header {
+    background-image: url("./assets/houses.png");
+    background-position: center;
+    background-size: cover;
+    min-height: 40vh;
+
+    position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header__title {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: linear-gradient(to left, rgb(249, 238, 159), rgb(242, 190, 32));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+
+    width: 100%;
+    text-align: center;
+}
+
+.header__search {
+    padding: 25px;
+    min-width: 40%;
+
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    border-radius: 1rem;
+    transform: translate(-50%, -50%);
+}
+
+.header__search::placeholder {
+    font-size: 1.25em;
+    font-weight: 500;
+}
+
+.header__search:hover {
+    outline: 1px solid var(--clr-blue);
+}
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home__details {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    align-items: center;
+
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    padding: 20px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    background: white;
+}
+
+.home__image {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.home__image img {
+    max-width: 100%;
+}
+
+.home__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 30px;
+    height: 30px;
+
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.home__close img {
+    width: 25px;
+    height: 25px;
 }

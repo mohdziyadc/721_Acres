@@ -134,4 +134,11 @@ contract Escrow {
     function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
+
+    function getApprovalOf(
+        uint256 tokenId,
+        address approver
+    ) public view returns (bool) {
+        return s_approval[tokenId][approver];
+    }
 }
